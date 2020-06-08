@@ -53,14 +53,12 @@ all: $(OBJECTS) $(TESTS) $(TARGETS)
         	$(LIBOBJS) $(LIBS)				\
         	`cat $@.objs`           		\
             $< -o $@
-	cp $@ ../bin/
         
 .c.exe: $< $(COBJECTS)
 	$(CC) 	$(LFLAGS)			    \
         	$(INCLUDES)				\
         	$(NAUTYOBJS)  $(COBJECTS) $(LIBS)		\
             $< -o $@
-	cp $@ ../bin/
         
 clean:
 	rm $(OBJECTS) $(TARGETS) $(TESTS)
